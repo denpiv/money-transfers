@@ -8,12 +8,20 @@ Application provides the following REST services:
 - make transfer from one account to another
 - get account with list of incoming and outgoing transactions
 
+Supported currencies:
+- USD
+- EUR
+- GBP
+
 ### How to run locally
 
 Use Main Class: ```io.vertx.core.Launcher```
 
 Program arguments: ```run com.revolut.moneytransfers.HttpServerVerticle```
 
+HTTP Server will start at ```localhost:8089```
+
+Health Check can be done via request ```localhost:8089/health```
 ___
 To run rests use the following command: ```mvn test```
 
