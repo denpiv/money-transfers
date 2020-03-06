@@ -2,11 +2,43 @@
 
 Application provides the following REST services:
 - create account
+```
+POST: /accounts
+Requesy Body:
+{
+    "number": "123-456-78-3",
+    "currency": "USD",
+    "balance": 500,
+    "userId": 2
+}
+```
 - close account
+```
+DELETE: /accounts/:account_id
+```
 - get all non-closed accounts
+```
+GET: /accounts?showClosed=0
+```
 - get all accounts
+```
+GET: /accounts?showClosed=1
+```
 - make transfer from one account to another
+```
+POST: /transfers
+Request Body:
+{
+    "accountIdFrom": 1,
+    "accountIdTo": 2,
+    "sum": 45.5
+}
+
+```
 - get account with list of incoming and outgoing transactions
+```
+GET: /accounts/:account_id
+```
 
 Supported currencies:
 - USD
